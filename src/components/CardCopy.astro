@@ -1,0 +1,18 @@
+---
+const { title, price, storage, users, sendLimit, highlight = false } = Astro.props;
+---
+
+<div class={`rounded-xl p-8 shadow-xl text-center w-72 font-sans ${highlight 
+    ? 'bg-indigo-400 text-white' 
+    : 'bg-white text-gray-800 shadow-lg'}`}>
+    
+    <h2 class={`text-lg font-semibold mb-4 ${highlight ? 'text-white' : 'text-grey-blue'}`}>{title}</h2>
+    <p class={`text-4xl font-bold mb-6 ${highlight ? 'text-white' : 'text-dark-gray-blue'}`}> {price}</p>
+    <ul class={`mb-6 text-sm space-y-3 ${highlight ? 'text-white' : 'text-grey-blue'}`}>
+      <li>{storage}</li>
+      <li>{users}</li>
+      <li>{sendLimit}</li>
+    </ul>
+    <button class="bg-gradient-to-r from-gradient-start to-gradient-end text-white 
+    font-semibold py-2 px-6 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition">Learn More</button>
+  </div>

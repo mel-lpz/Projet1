@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Card from '../components/Card.astro';
+import CardCopy from '../components/CardCopy.astro';
+---
+
+<BaseLayout title="Page Astro">
+	<h1>Welcome to the Home Page Test</h1>
+	<p>This is the main content of the home page.</p>
+	
+	<div class="flex flex-col md:flex-row gap-8 justify-center items-center mt-10">
+		<Card 
+        title="Basic"
+        price="19.99"
+        storage="500 GB Storage"
+        users="2 Users Allowed"
+        sendLimit="Send up to 3 GB"
+		highlight={true}
+      />
+
+      <Card 
+        title="Professional"
+        price="24.99"
+        storage="1 TB Storage"
+        users="5 Users Allowed"
+        sendLimit="Send up to 10 GB"
+		highlight={false}
+      />
+
+      <Card 
+        title="Master"
+        price="39.99"
+        storage="2 TB Storage"
+        users="10 Users Allowed"
+        sendLimit="Send up to 20 GB"
+		highlight={false}
+      />
+	</div>
+	  
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout title="page Astro">
+    <section class="text-center py-12 px-6">
+        <article class="mb-8">
+            <h1
+                class="text-4xl font-bold text-[var(--clr-dark-gray-blue)] mb-4"
+            >
+                Our Pricing
+            </h1>
+        </article>
+        <article class="flex items-center justify-center gap-6 mb-12">
+            <p class="text-[var(--clr-grey-blue)] font-medium">Annually</p>
+            <div>
+                <input type="checkbox" class="sr-only" checked />
+                <label
+                    class="block w-14 h-8 bg-gradient-to-r from-[var(--clr-gradient-start)] to-[var(--clr-gradient-end)] rounded-full cursor-pointer relative hover:opacity-80"
+                >
+                    <span
+                        class="absolute top-1 left-1 w-6 h-6 bg-[var(--clr-vl-gray-blue)] rounded-full"
+                    ></span>
+                </label>
+            </div>
+            <p class="text-[var(--clr-grey-blue)] font-medium">Monthly</p>
+        </article>
+    </section>
+    
+    
+    <article class="flex flex-col md:flex-row justify-center flex-wrap">
+        <Card
+            status="Basic"
+            price="19.99"
+            storage="500 GB"
+            users="2"
+            gb="3"
+            maClass=""
+        />
+        <Card
+            status="Professional"
+            price="24.99"
+            storage="1 TB"
+            users="5"
+            gb="10"
+            maClass="dark"
+        />
+        <Card
+            status="Master"
+            price="39.99"
+            storage="2 TB"
+            users="10"
+            gb="20"
+            maClass=""
+        />
+    </article>
+</BaseLayout>

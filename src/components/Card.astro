@@ -1,0 +1,31 @@
+---
+const { status, price, storage, users, gb, maClass = "" } = Astro.props;
+---
+
+<article
+    class={`w-80 ${maClass} p-6 m-4 rounded-lg flex flex-col gap-4 items-center shadow-lg 
+        bg-[var(--clr-very-light-grayish-blue)] text-[var(--clr-dark-grayish-blue)]`}
+>
+    <h2 class="text-lg mb-2 font-bold">{status}</h2>
+    <p class="text-4xl mb-4 font-bold">
+        ${price}
+        <span class="text-base font-normal text-[var(--clr-light-grayish-blue)]"
+            >/mo</span
+        >
+    </p>
+    <ul
+        class="mb-6 w-full text-center text-[var(--clr-grayish-blue)] text-base space-y-2"
+    >
+        <li>{storage}</li>
+        <li>{users}</li>
+        <li>{gb}</li>
+    </ul>
+    <button
+        class="w-full py-3 rounded-lg font-bold
+            bg-[var(--clr-very-light-grayish-blue)] text-[var(--clr-grayish-blue)]
+            hover:bg-gradient-to-br hover:from-[var(--clr-gradient-start)] hover:to-[var(--clr-gradient-end)]
+            hover:text-white transition-all duration-200"
+    >
+        Learn More
+    </button>
+</article>

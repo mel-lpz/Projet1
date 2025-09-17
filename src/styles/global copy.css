@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+
+    --font-sans: "Montserrat", sans-serif;
+    
+    
+    
+}
+
+@layer base {
+    :root {
+        --clr-bg: hsl(0, 0%, 98%);
+        --clr-gradient-start: hsl(236, 72%, 79%);
+        --clr-gradient-end: hsl(237, 63%, 64%);
+
+        --clr-vl-gray-blue: hsl(240, 78%, 98%);
+        --clr-light-gray-blue: hsl(234, 14%, 74%);
+        --clr-dark-gray-blue: hsl(232, 13%, 33%);
+        --clr-grey-blue: hsl(233, 13%, 49%);
+
+        --clr-bg: var(--clr-background)
+        --clr-fg: var(--clr-vl-gray-blue);
+        --clr-btn-bg: var(--clr-gradient-start);
+        --clr-btn-fg: var(--clr-gradient-end);
+        
+    }
+
+    .dark {
+        --color-bg: var()
+        
+    }
+
+    .redtheme {
+        --color-gradient-start: hsl(0, 100%, 67%);
+        --color-gradient-end: hsl(39, 100%, 56%);
+    }
+}

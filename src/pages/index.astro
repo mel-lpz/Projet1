@@ -1,8 +1,40 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import plans from '../data/plans.json';
 ---
 
-<BaseLayout title="Page Astro">
-	<h1>Welcome to the Home Page Test</h1>
-	<p>This is the main content of the home page.</p>
+<BaseLayout title="page Astro">
+  <section class="text-center py-12 px-6">
+    <article class="mb-8">
+      <h1 class="text-4xl font-bold text-[var(--clr-dark-gray-blue)] mb-4">
+        Our Pricing
+      </h1>
+    </article>
+    <article class="flex items-center justify-center gap-6 mb-12">
+      <p class="text-[var(--clr-grey-blue)] font-medium">Annually</p>
+      <div>
+        <input type="checkbox" class="sr-only" checked />
+        <label class="block w-14 h-8 bg-gradient-to-r from-[var(--clr-gradient-start)] to-[var(--clr-gradient-end)] rounded-full cursor-pointer relative hover:opacity-80">
+          <span class="absolute top-1 left-1 w-6 h-6 bg-[var(--clr-vl-gray-blue)] rounded-full"></span>
+        </label>
+      </div>
+      <p class="text-[var(--clr-grey-blue)] font-medium">Monthly</p>
+    </article>
+  </section>
+
+  <article class="flex flex-col md:flex-row justify-center flex-wrap">
+  {
+    plans.map((plan, index) => (
+      <Card
+        status={plan.name}
+        price={plan.price.month}
+        storage={plan.features[0]}
+        users={plan.features[1]}
+        gb={plan.features[2]}
+        maClass={index === 1 ? "dark scale-120" : ""}
+      />
+    ))
+  }
+</article>
 </BaseLayout>
